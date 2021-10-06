@@ -3,7 +3,11 @@ import { ethers } from 'ethers';
 import Greeter from './artifacts/contracts/Greeter.sol/Greeter.json'; 
 import './App.css';
 
-const contractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
+// local contract address
+// const contractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
+
+// Ropstep contract address
+const contractAddress = '0x0b317624A645f99F88b2748a9dA30eC1f9130aFc';
 
 function App() {
   const [inputVal, setInputVal] = useState('');
@@ -50,7 +54,7 @@ function App() {
     try {
       // Initiating transaction on Greeter contract
       const transaction = await contract.setGreeting(inputVal);
-      await transaction.wait();
+      await transaction.wait(); // takes many seconds
     } catch(err) {
       console.log('error updating greeting ==>', err);
     }

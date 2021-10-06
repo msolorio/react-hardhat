@@ -15,7 +15,7 @@ async function main() {
 
   // We get the contract to deploy
   const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello from the blockchain!");
+  const greeter = await Greeter.deploy("Hello from the blockchain on Ropsten!");
 
   await greeter.deployed();
 
